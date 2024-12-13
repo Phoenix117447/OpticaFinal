@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajador - Consultas Médicas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+          crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Consultas Médicas</h1>
+
+        <!-- Botón para generar la lista de consultas médicas -->
+        <div class="mb-4">
+            <button class="btn btn-primary" onclick="generarListaConsultas()">Generar Lista de Consultas</button>
+        </div>
+
+        <!-- Espacio para mostrar la lista de consultas -->
+        <div id="listaConsultas" class="mt-4">
+            <h2>Lista de Consultas</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Cédula Usuario</th>
+                        <th>Fecha y Hora</th>
+                    </tr>
+                </thead>
+                <tbody id="consultasBody">
+                    <!-- Aquí se insertarán las filas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Botón para generar la lista de usuarios -->
+        <div class="mb-4 mt-5">
+            <button class="btn btn-secondary" onclick="generarListaUsuarios()">Generar Lista de Usuarios</button>
+        </div>
+
+        <!-- Espacio para mostrar la lista de usuarios -->
+        <div id="listaUsuarios" class="mt-4">
+            <h2>Lista de Usuarios</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Cédula</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody id="usuariosBody">
+                    <!-- Aquí se insertarán las filas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Función para generar la lista de consultas médicas
+        function generarListaConsultas() {
+            fetch("/ListarConsultas") // Cambiar por el endpoint del servlet correspondiente
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Error al obtener la lista de consultas.");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const consultasBody = document.getElementById("consultasBody");
+                    consultasBody.innerHTML = ""; // Limpiar el contenido actual
+
+                    data.forEach(consulta => {
+                        const fila = document.createElement("tr");
+                        fila.innerHTML = `
+                            <td>${consulta.cedula_usuario}</td>
+                            <td>${consulta.fecha_hora}</td>
+                        `;
+                        consultasBody.appendChild(fila);
+                    });
+                })
+                .catch(error => {
+                    alert(error.message);
+                });
+        }
+
+        // Función para generar la lista de usuarios
+        function generarListaUsuarios() {
+            fetch("/ListarUsuarios") // Cambiar por el endpoint del servlet correspondiente
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Error al obtener la lista de usuarios.");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const usuariosBody = document.getElementById("usuariosBody");
+                    usuariosBody.innerHTML = ""; // Limpiar el contenido actual
+
+                    data.forEach(usuario => {
+                        const fila = document.createElement("tr");
+                        fila.innerHTML = `
+                            <td>${usuario.cedula}</td>
+                            <td>${usuario.nombre}</td>
+                            <td>${usuario.correo}</td>
+                            <td>${usuario.telefono}</td>
+                        `;
+                        usuariosBody.appendChild(fila);
+                    });
+                })
+                .catch(error => {
+                    alert(error.message);
+                });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+

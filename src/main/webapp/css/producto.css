@@ -1,0 +1,201 @@
+
+/* Estilos globales */
+body {
+    margin: 0px;
+    margin-top: 70px;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* Fondo blanco */
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: rgba(26, 182, 223, 0.8);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-button {
+    background-color: #1ab6df;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+    background-color: #1595c4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+/* Estilo para el carrito flotante */
+.carrito-float {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    display: none; /* Inicialmente oculto */
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.carrito-float h3 {
+    text-align: center;
+    margin: 0 0 10px;
+}
+
+.carrito-float ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.carrito-float ul li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.carrito-float .subtotal {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Estilo para el botón que abre el carrito */
+.carrito-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+}
+
+/* Estilo para el contador del carrito */
+.carrito-button .contador {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Estilos para la lista de productos */
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 productos por fila */
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    grid-auto-rows: 1fr; /* Asegura que todos los productos tengan la misma altura */
+}
+
+.product-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 100%; /* Asegura que el recuadro tenga un tamaño fijo */
+}
+
+.product-card img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del recuadro */
+    height: 200px; /* Fija la altura de la imagen */
+    object-fit: cover; /* Asegura que las imágenes no se deformen */
+    border-radius: 8px;
+}
+
+.product-info {
+    margin-top: 10px;
+}
+
+.product-name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.product-price {
+    color: #28a745;
+    font-size: 1.1em;
+}
+
+.product-description {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 5px;
+}
+
+.product-card form {
+    margin-top: 10px;
+}
+
+.product-card button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #218838;
+}
+
+/* Título más arriba */
+h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Pie de página */
+.footer {
+    background-color: #1ab6df;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.contacto-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Responsividad para tablets y móviles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+
+<root>
+    <servlet>
+    <servlet-name>RegistrarUsuario</servlet-name>
+    <servlet-class>co.uis.logica.RegistrarUsuario</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>RegistrarUsuario</servlet-name>
+    <url-pattern>/RegistrarUsuario</url-pattern>
+</servlet-mapping>
+</root>
+

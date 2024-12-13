@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../media/inicio.webp);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: #1ab6df;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-button {
+    background-color: #1ab6df;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #1ab6df;
+    color: black;
+}
+
+/* Estilos generales */
+/* Contenedor sin fondo */
+.contacto-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    box-shadow: none; /* Eliminé la sombra para un diseño más limpio */
+}
+
+.contacto-content {
+    flex: 1;
+    color: #000101; /* Aseguramos que el texto sea legible sobre el fondo general */
+    padding-right: 20px;
+}
+
+.imagen-contacto {
+    flex: 0 0 auto;
+    width: 40%; 
+    height: auto;
+    border-radius: 10px;
+}
+
+.titulo {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #000101;
+    font-size: 24px;
+}
+
+.campo {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.campo label {
+    display: block;
+}
+
+/* Responsividad para tablets */
+@media (max-width: 768px) {
+    .contacto-container {
+        flex-direction: column; /* Cambia de horizontal a vertical */
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .contacto-content {
+        padding-right: 0;
+        margin-bottom: 20px; /* Espacio entre texto e imagen */
+    }
+
+    .imagen-contacto {
+        width: 80%; /* Imagen más grande en dispositivos pequeños */
+    }
+}
+
+/* Responsividad para móviles */
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 20px;
+    }
+
+    .campo {
+        font-size: 16px; /* Texto más pequeño en pantallas pequeñas */
+    }
+
+    .imagen-contacto {
+        width: 100%; /* La imagen ocupa todo el ancho */
+    }
+}

@@ -1,0 +1,138 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    margin-top: 100px;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* Fondo blanco */
+    color: #333;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1ab6df;
+    text-align: center;
+    margin-top: 50px;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: rgba(26, 182, 223, 0.8);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-button {
+    background-color: #1ab6df;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+    background-color: #1595c4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Deslizador de Imágenes */
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Pie de página */
+.footer {
+    background-color: #1ab6df;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.contacto-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Responsividad para tablets y móviles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .content-main {
+        padding: 20px;
+    }
+
+    .slider {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+/* Efectos de animación del deslizador */
+@keyframes slideAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-50%);
+    }
+    50% {
+        transform: translateX(-75%);
+    }
+    75% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.slides {
+    animation: slideAnimation 12s infinite;
+}
