@@ -65,7 +65,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     <script>
         // Función para generar la lista de consultas médicas
         function generarListaConsultas() {
-            fetch("/ListarConsultas") // Cambiar por el endpoint del servlet correspondiente
+            fetch("ListarConsultas") // Cambiar por el endpoint del servlet correspondiente
                 .then(response => {
                     if (!response.ok) {
                         throw new Error("Error al obtener la lista de consultas.");
@@ -92,7 +92,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 
         // Función para generar la lista de usuarios
         function generarListaUsuarios() {
-            fetch("/ListarUsuarios") // Cambiar por el endpoint del servlet correspondiente
+            fetch("ListarUsuarios") // Cambiar por el endpoint del servlet correspondiente
                 .then(response => {
                     if (!response.ok) {
                         throw new Error("Error al obtener la lista de usuarios.");
